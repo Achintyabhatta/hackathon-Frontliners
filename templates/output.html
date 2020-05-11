@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    #temp {
+        background-color: #AD1B02 !important;
+    }
+    #temp2{
+        background-color: #F3BE26 !important;
+    }
+</style>
+<div class="row mb-5 text-center text-white">
+</div>
+
+<div class="card">
+    <div id = "temp" class="card-header bg-primary text-white">Transcript: </div>
+    <div class="card-body">{{res}}</div>
+    <div class="card-footer text-muted">Transcription Accuracy : {{foot}}%</div>
+</div>
+<div class="row mb-5 text-center text-white">
+</div>
+<div class="card">
+    <div id = "temp" class="card-header bg-primary text-white">Listed Essentials : </div>
+    <div class="card-body">
+        {% for val in dataset%}
+        <span class="badge badge-warning">{{val}}</span>
+        {% endfor %}
+
+    </div>
+</div>
+<div class="row mb-5 text-center text-white">
+</div>
+<div class="card">
+    <div id = "temp" class="card-header bg-primary text-white">Other Recommended Items : </div>
+    <div class="card-body">
+        {% for val in datasetm%}
+        <span class="badge badge-warning">{{val}}</span>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
